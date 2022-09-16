@@ -1,0 +1,35 @@
+{
+  "name": "l3l0-profile-page",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l3l0/profile-page.git"
+  },
+  "keywords": [],
+  "author": "leszek.prabucki@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l3l0/profile-page/issues"
+  },
+  "homepage": "https://github.com/l3l0/profile-page#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "fork-ts-checker-notifier-webpack-plugin": "^6.0.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

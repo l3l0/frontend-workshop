@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    application:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - .:/home/l3l0-profile-page/project
+        working_dir: "/home/l3l0-profile-page/project"
+        networks:
+            - default
+        ports:
+            - "8080:8080"
