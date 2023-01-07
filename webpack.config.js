@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     context: __dirname, // to automatically find tsconfig.js
@@ -36,11 +37,46 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
             {
+                test: /\.scss$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    autoprefixer()
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            // Prefer Dart Sass
+                            implementation: require('sass'),
+
+                            // See https://github.com/webpack-contrib/sass-loader/issues/804
+                            webpackImporter: false,
+                            sassOptions: {
+                                includePaths: ['./node_modules']
+                            },
+                        },
+                    },
+                ]
+            },
+            {
                 test: /.tsx?$/,
                 options: {
                     transpileOnly: true,
                 },
                 loader: 'ts-loader',
+            },
+            {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,

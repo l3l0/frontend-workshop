@@ -10,5 +10,3 @@ stop:
 	docker-compose down
 bash:
 	${EXEC_COMMAND} bash
-run_server:
-	${RUN_COMMAND} npm run start

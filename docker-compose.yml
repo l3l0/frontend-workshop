@@ -6,8 +6,8 @@ services:
             context: ./
             dockerfile: Dockerfile
         volumes:
-            - .:/home/l3l0-profile-page/project
-        working_dir: "/home/l3l0-profile-page/project"
+            - .:/home/my-project/project
+        working_dir: "/home/my-project/project"
         networks:
             - default
         ports:

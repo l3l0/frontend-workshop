@@ -1,13 +1,9 @@
-import _ from 'lodash';
 import './style.css';
+import './app.scss';
+import { component } from "./component";
+import { component as ts_component } from "./ts-component.ts";
+import { component as complex_ts_component } from './ts-complex-component.ts';
 
-function component() {
-    const element = document.createElement('div');
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    return element;
-}
-
-document.body.appendChild(component());
+document.body.appendChild(component({welcomeParts: ['Hello', 'World']}));
+document.body.appendChild(ts_component({welcomeParts: ['Hello', 'World2']}));
+document.body.appendChild(complex_ts_component({title: 'Test', content: 'Some test content', actions: ['Action 1']}));
