@@ -1,4 +1,4 @@
-import './components/ts-complext-component.scss';
+import './components/ts-complex-component.scss';
 
 export function component(props: {title: string, content: string, actions: string[]}): HTMLElement
 {
